@@ -1,0 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/08/29 16:23:56 by jrobles           #+#    #+#             */
+/*   Updated: 2018/08/29 19:09:15 by jrobles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void ft_print_reverse_alphabet(void);
+
+int		main(void)
+{
+	ft_print_reverse_alphabet();
+	return 0;
+}
+
+void ft_print_reverse_alphabet(void)
+{
+	char *fr;
+	fr = "zyxwvutsrqponmlkjihgfedcbda";
+	/*while(*fr)
+	{
+		ft_putchar(*fr++);
+	}*/
+
+	write(1,*fr,*fr);
+}
