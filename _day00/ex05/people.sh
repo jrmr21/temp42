@@ -1,1 +1,1 @@
-ldapsearch -xLLL "(uid=z*)" cn |  grep "^cn:" | sort -d -r | cut -c 5-
+ldapsearch -xLLL "(uid=z*)" cn |  grep "^cn:" | sort -d -f -r | cut -c 5-
