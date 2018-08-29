@@ -6,13 +6,20 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 19:02:25 by jrobles           #+#    #+#             */
-/*   Updated: 2018/08/29 21:42:26 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/08/29 22:00:52 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#imclude <unistd.h>
+void	ft_print_reverse_alphabet(void);
+int		ft_putchar(char entre);
 
-int		main(void)
+void	ft_print_reverse_alphabet(void)
 {
-	return (0);
+	char *num;
+
+	num = "0123456789";
+	while (*fr)
+	{
+		ft_putchar(*num++);
+	}
 }
