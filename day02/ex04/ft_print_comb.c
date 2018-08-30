@@ -1,25 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_print_comb.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/08/29 19:02:25 by jrobles           #+#    #+#             */
-/*   Updated: 2018/08/29 23:19:21 by jrobles          ###   ########.fr       */
+/*   Created: 2018/08/29 22:50:12 by jrobles           #+#    #+#             */
+/*   Updated: 2018/08/30 02:15:16 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_print_reverse_alphabet(void);
+#include <unistd.h>
+
 int		ft_putchar(char c);
+void	ft_print_comb(void);
 
-void	ft_print_reverse_alphabet(void)
+int main (void)
 {
-	char *num;
+	ft_print_comb();
+	return (0);
+}
 
-	num = "0123456789";
-	while (*fr)
+void ft_print_comb(void)
+{
+	int c;
+	int d;
+	int u;
+	c = 0;
+	d = 1;
+	u = 2;
+	while(c<8)
 	{
-		ft_putchar(*num++);
+		while(d<9)
+		{
+			ft_putchar(d);
+			while(u<10)
+			{
+				ft_putchar(u);
+				u++;
+			}
+			d++;
+		}
+		c++;	
 	}
+}
+
+int    ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (0);
 }
