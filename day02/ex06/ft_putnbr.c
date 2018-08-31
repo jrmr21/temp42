@@ -6,25 +6,21 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 11:45:20 by jrobles           #+#    #+#             */
-/*   Updated: 2018/08/30 15:12:29 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/08/31 05:06:49 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_putnbr(int nb);
 int		ft_putchar(char c);
 
-int		main(void)
-{
-	ft_putnbr(5564646);
-	return (0);
-}
-
 void	ft_putnbr(int nb)
 {
-	int i;
-	int size;
+	unsigned int size;
+	unsigned int i;
 
 	i = 1;
+	if (nb < 0)
+		ft_putchar('-');
 	if (nb > 9)
 	{
 		size = 0;
@@ -43,10 +39,4 @@ void	ft_putnbr(int nb)
 	{
 		ft_putchar(nb % 10 + '0');
 	}
-}
-
-int		ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 22:04:51 by jrobles           #+#    #+#             */
-/*   Updated: 2018/08/29 22:32:48 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/08/31 03:21:39 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@ int		ft_putchar(char c);
 
 void	ft_is_negative(int n)
 {
-	if (n > 0)
+	if (n > -1)
 	{
 		ft_putchar('P');
 	}

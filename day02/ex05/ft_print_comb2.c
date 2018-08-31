@@ -6,20 +6,13 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 10:18:53 by jrobles           #+#    #+#             */
-/*   Updated: 2018/08/30 11:35:48 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/08/31 07:22:08 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 int		ft_putchar(char c);
 void	ft_print_comb2(void);
-
-int		main(void)
-{
-	ft_print_comb2();
-	return (0);
-}
+void	show_space(int a);
 
 void	ft_print_comb2(void)
 {
@@ -29,7 +22,7 @@ void	ft_print_comb2(void)
 	number_one = -1;
 	while (number_one++ < 98)
 	{
-		number_two = -1;
+		number_two = number_one;
 		while (number_two++ < 99)
 		{
 			if (number_one < 10)
@@ -43,14 +36,16 @@ void	ft_print_comb2(void)
 			else
 				ft_putchar((number_two / 10) % 10 + '0');
 			ft_putchar(number_two % 10 + '0');
-			ft_putchar(' ');
-			ft_putchar(',');
+			shoz_space(number_one);
 		}
 	}
 }
 
-int		ft_putchar(char c)
+void	show_space(int a)
 {
-	write(1, &c, 1);
-	return (0);
+	if (a != 98)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
 }
