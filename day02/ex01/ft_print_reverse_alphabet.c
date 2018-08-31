@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/29 16:23:56 by jrobles           #+#    #+#             */
-/*   Updated: 2018/08/29 23:00:43 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/08/31 10:33:37 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_print_reverse_alphabet(void)
 {
 	char *fr;
 
-	fr = "zyxwvutsrqponmlkjihgfedcbda";
+	fr = "zyxwvutsrqponmlkjihgfedcba";
 	while (*fr)
 	{
 		ft_putchar(*fr++);
