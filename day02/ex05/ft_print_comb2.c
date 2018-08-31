@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/08/30 10:18:53 by jrobles           #+#    #+#             */
-/*   Updated: 2018/08/31 07:22:08 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/08/31 07:27:05 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ft_print_comb2(void)
 			else
 				ft_putchar((number_two / 10) % 10 + '0');
 			ft_putchar(number_two % 10 + '0');
-			shoz_space(number_one);
+			show_space(number_one);
 		}
 	}
 }
