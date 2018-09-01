@@ -1,0 +1,5 @@
+Credentials cache: API:5E9E5A70-273A-4A47-B7F6-24FF84D2E5BF
+        Principal: jrobles@42.FR
+
+  Issued                Expires               Principal
+Aug 27 15:40:35 2018  Sep  3 15:39:53 2018  krbtgt/42.FR@42.FR
