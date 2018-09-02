@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/01 00:26:17 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/02 11:31:15 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/02 18:45:57 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@ void	draw(int size, char img1, char img2);
 
 void	rush(int x, int y)
 {
+	if (y < 1 || x < 1)
+		return ;
 	if (y > 2)
 	{
 		draw(x, 'o', '-');
 		while (y-- - 2)
-			draw (x, '|', ' ');
+			draw(x, '|', ' ');
 		draw(x, 'o', '-');
 	}
 	else
@@ -39,7 +41,7 @@ void	draw(int size, char img1, char img2)
 		while (size-- - 2)
 		{
 			ft_putchar(img2);
-			if (( size - 2 ) < 1  )
+			if ((size - 2) < 1)
 			{
 				ft_putchar(img1);
 				ft_putchar('\n');
