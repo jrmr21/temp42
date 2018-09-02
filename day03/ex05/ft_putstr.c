@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/01 17:20:14 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/02 02:47:49 by jrobles          ###   ########.fr       */
+/*   Created: 2018/09/02 02:57:41 by jrobles           #+#    #+#             */
+/*   Updated: 2018/09/02 03:02:06 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_div_mod(int a, int b, int *div, int *mod);
+#include <unistd.h>
 
-void ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_putstr(char *str);
+
+void	ft_putstr(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	while (*str)
+	{
+		write(1, &str, 1);
+	}
 }

@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/01 17:20:14 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/02 02:47:49 by jrobles          ###   ########.fr       */
+/*   Created: 2018/09/02 03:03:01 by jrobles           #+#    #+#             */
+/*   Updated: 2018/09/02 03:05:55 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_div_mod(int a, int b, int *div, int *mod);
+#include <unistd.h>
 
-void ft_div_mod(int a, int b, int *div, int *mod)
+int		ft_strlen(char *str);
+
+int		ft_strln(char *str)
 {
-	*div = a / b;
-	*mod = a % b;
+	int out;
+
+	out = 0;
+	while(*str)
+		out ++;
+	return (out);
 }

@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/01 17:20:14 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/02 02:47:49 by jrobles          ###   ########.fr       */
+/*   Created: 2018/09/02 02:48:33 by jrobles           #+#    #+#             */
+/*   Updated: 2018/09/02 02:56:12 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_div_mod(int a, int b, int *div, int *mod);
+void ft_ultimate_div_mod(int *a, int *b);
 
-void ft_div_mod(int a, int b, int *div, int *mod)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	*div = a / b;
-	*mod = a % b;
+	int a1;
+	int b1;
+
+	a1 = *a;
+	b1 = *b;
+	a = a1 / b1;
+	b = a1 % b1
 }
