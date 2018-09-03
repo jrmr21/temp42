@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 02:57:41 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/02 03:02:06 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/03 13:29:45 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ void	ft_putstr(char *str);
 
 void	ft_putstr(char *str)
 {
+	char tempo;
+
 	while (*str)
 	{
-		write(1, &str, 1);
+		tempo = *str++;
+		write(1, &tempo, 1);
 	}
 }
