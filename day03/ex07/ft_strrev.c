@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 03:11:59 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/03 17:34:16 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/04 02:36:27 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,15 @@ int		ft_strlen(char *str)
 	while (*str++)
 		out++;
 	return (out);
+}
+
+int main(void)
+{
+	char *b = ft_strrev("salut");
+	while(*b)
+	{
+		char c=*b++;
+		write(1, &c, 1);
+	}
+
 }
