@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/04 20:35:54 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/05 13:59:37 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/06 00:19:05 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		ft_atoi(char *str)
 	}
 	else if (str[i] == '+')
 		i++;
-	while ((str[i] >= '\n') && ((str[i] > 48) && (str[i] < 58)))
+	while ((str[i] > 48) && (str[i] < 58))
 	{
 		sortie *= 10;
 		sortie += (str[i] - 48);
