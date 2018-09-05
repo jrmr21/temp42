@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 03:11:59 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/05 19:12:42 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/05 19:50:22 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrev(char *str)
 
 	i = 0;
 	size = ft_strlen(str);
-	while (i <= (size + 1) / 2)
+	while (i < (size + 1) / 2)
 	{
 		tempo = str[i];
 		str[i] = str[size - i];
