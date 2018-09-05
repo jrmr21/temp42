@@ -6,11 +6,9 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 03:11:59 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/04 02:36:27 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/05 19:12:42 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 char	*ft_strrev(char *str);
 int		ft_strlen(char *str);
@@ -19,18 +17,18 @@ char	*ft_strrev(char *str)
 {
 	int		size;
 	int		i;
-	char	*tempo;
-	char	prout[*str];
+	char	tempo;
 
-	i = -1;
+	i = 0;
 	size = ft_strlen(str);
-	while (i++ <= size--)
+	while (i <= (size + 1) / 2)
 	{
-		prout[i] = str[size];
-		prout[size] = str[i];
+		tempo = str[i];
+		str[i] = str[size - i];
+		str[size - i] = tempo;
+		i++;
 	}
-	tempo = prout;
-	return (tempo);
+	return (str);
 }
 
 int		ft_strlen(char *str)
@@ -40,16 +38,5 @@ int		ft_strlen(char *str)
 	out = 0;
 	while (*str++)
 		out++;
-	return (out);
-}
-
-int main(void)
-{
-	char *b = ft_strrev("salut");
-	while(*b)
-	{
-		char c=*b++;
-		write(1, &c, 1);
-	}
-
+	return (out - 1);
 }

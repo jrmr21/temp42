@@ -6,13 +6,12 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/02 02:57:41 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/03 13:29:45 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/05 12:54:27 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 void	ft_putstr(char *str);
+int		ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
@@ -21,6 +20,6 @@ void	ft_putstr(char *str)
 	while (*str)
 	{
 		tempo = *str++;
-		write(1, &tempo, 1);
+		ft_putchar(tempo);
 	}
 }
