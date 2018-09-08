@@ -6,17 +6,18 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:38:11 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/08 18:42:39 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/08 22:49:54 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define SIZE 9
 
+#include <stdio.h>
 #include <unistd.h>
 
 void	show_table(char table[SIZE][SIZE]);
 char	set_table(char table[SIZE][SIZE], char **input);
-char	get_lenght(char *c);
+int		get_lenght(char *c);
 
 int		main(int argc, char **argv)
 {
@@ -25,7 +26,8 @@ int		main(int argc, char **argv)
 	
 	error = 0;
 
-	error = set_table(sudoka, argv);
+	if(argc == 10)
+		error = set_table(sudoka, argv);
 	if(error != 0 || argc != 10)
 	{
 		write(1, "Error\n", 6);
@@ -40,18 +42,18 @@ char	set_table(char table[SIZE][SIZE], char **input)
 {
 	char x;
 	char y;
-
+	
 	y = -1;
 	while (y++ < SIZE -1)
 	{
 		x = -1;	
 		while (x++ < SIZE -1)
 		{
-			if((input[y+1][x]) 
-					&& ((input[y+1][x] > 47) && (input[y+1][x] < 58) 
-						|| input[y+1][x] == 46)
-							&& (get_lenght(input[y+1] == 9)))
+			if((input[y+1][x]) 	&& (((input[y+1][x] > 47) && (input[y+1][x] < 58)) 
+					|| (input[y+1][x] == 46)) && (get_lenght(&input[y+1][0]) == 9))
+			{
 				table[y][x] = input[y+1][x];
+			}
 			else
 				return (1);
 		}
@@ -59,9 +61,9 @@ char	set_table(char table[SIZE][SIZE], char **input)
 	return (0);
 }
 
-char get_lenght(char *c)
+int		get_lenght(char *c)
 {
-	char size;
+	int	size;
 	
 	size = 0;
 	while (*c++)
