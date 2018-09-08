@@ -6,67 +6,54 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:38:11 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/08 17:18:15 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/08 18:10:47 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define SIZE 9
 
-#include <stdio.h>
 #include <unistd.h>
 
-void	xrange(char c, char table[SIZE][SIZE]);
 void	show_table(char table[SIZE][SIZE]);
-void	set_table(char table[SIZE][SIZE], char **input);
+char	set_table(char table[SIZE][SIZE], char **input);
 
 int		main(int argc, char **argv)
 {
 	char sudoka[SIZE][SIZE];
-	char l;
-	char c;
+	char error;
+	
+	error = 0;
 
-	if (argc != 10)
+	error = set_table(sudoka, argv);
+	if(error != 0 || argc != 10)
 	{
-		write(1, "Error\n",6);
+		write(1, "Error\n", 6);
 		return (-42);
 	}
-	xrange('0', sudoka);
-	set_table(sudoka, argv);
 
 	show_table(sudoka);
 	return (0);
 }
 
-void	set_table(char table[SIZE][SIZE], char **input)
-{
-	signed char cpt_[4];
-
-	cpt_[0] = -1;
-	cpt_[1] = -1;
-	cpt_[2] = 0;
-	while (cpt_[0]++)
-	{
-		cpt_[1] = -1;
-		while (cpt_[1]++)
-		{
-			cpt_[2]++;
-			table[cpt_[0]] [cpt_[1]] = *input[cpt_[2]];
-		}
-	}
-}
-
-void	xrange(char c, char table[SIZE][SIZE])
+char	set_table(char table[SIZE][SIZE], char **input)
 {
 	char x;
 	char y;
-	
+
 	y = -1;
-	while (y++ < SIZE -1 )
+	while (y++ < SIZE -1)
 	{
-		x = -1;
+		x = -1;	
 		while (x++ < SIZE -1)
-			table[y][x] = c;
+		{
+			if(((input[y+1][x]) && ((input[y+1][x] > 47) 
+						&& (input[y+1][x] < 58)))	|| input[y+1][x] == 46)
+				table[y][x] = input[y+1][x];
+			else
+				return (1);
+		}
 	}
+	return (0);
 }
 
 void	show_table(char table[SIZE][SIZE])
