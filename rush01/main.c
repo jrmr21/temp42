@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:38:11 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/08 18:10:47 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/08 18:42:39 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 void	show_table(char table[SIZE][SIZE]);
 char	set_table(char table[SIZE][SIZE], char **input);
+char	get_lenght(char *c);
 
 int		main(int argc, char **argv)
 {
@@ -46,14 +47,26 @@ char	set_table(char table[SIZE][SIZE], char **input)
 		x = -1;	
 		while (x++ < SIZE -1)
 		{
-			if(((input[y+1][x]) && ((input[y+1][x] > 47) 
-						&& (input[y+1][x] < 58)))	|| input[y+1][x] == 46)
+			if((input[y+1][x]) 
+					&& ((input[y+1][x] > 47) && (input[y+1][x] < 58) 
+						|| input[y+1][x] == 46)
+							&& (get_lenght(input[y+1] == 9)))
 				table[y][x] = input[y+1][x];
 			else
 				return (1);
 		}
 	}
 	return (0);
+}
+
+char get_lenght(char *c)
+{
+	char size;
+	
+	size = 0;
+	while (*c++)
+		size++;
+	return (size);
 }
 
 void	show_table(char table[SIZE][SIZE])
