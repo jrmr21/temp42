@@ -6,20 +6,43 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/06 12:04:41 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/06 19:47:46 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/06 15:22:01 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int		ft_fibonacci(int index);
+int		fibo_search(int start, int index);
 
 int		ft_fibonacci(int index)
 {
-	if (index > 1)
-		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
-	else if (index == 0)
-		return (0);
-	else if (index == 1)
-		return (1);
-	else
+	int result;
+
+	if (index < 0)
 		return (-1);
+
+	if(index < 1)
+		return (0);
+	else
+		result = fibo_search(0, 1, index);
+	return (result);
+}
+
+int		fibo_search(int x1, int x2, int index)
+{
+	int xr;
+
+	if (index > 0)
+	{
+		xr = x2 + x1;
+		xr = fibo_search(x2, xr, --index);
+	}
+	return (xr);
+}
+
+int		main(void)
+{
+	printf("%d ",ft_fibonacci(4));
+	return (0);
 }

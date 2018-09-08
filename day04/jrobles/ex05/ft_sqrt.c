@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/06 12:04:41 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/06 19:47:46 by jrobles          ###   ########.fr       */
+/*   Created: 2018/09/07 00:54:14 by jrobles           #+#    #+#             */
+/*   Updated: 2018/09/07 12:21:55 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_fibonacci(int index);
+int		ft_sqrt(int nb);
 
-int		ft_fibonacci(int index)
+int		ft_sqrt(int nb)
 {
-	if (index > 1)
-		return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
-	else if (index == 0)
+	int i;
+
+	if (nb < 0)
 		return (0);
-	else if (index == 1)
-		return (1);
-	else
-		return (-1);
+	i = 1;
+	while (i * i < nb)
+		i++;
+	return (((i * i) == nb) ? i : 0);
 }
