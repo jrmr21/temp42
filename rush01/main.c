@@ -6,13 +6,12 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:38:11 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/08 22:49:54 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/08 23:38:03 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define SIZE 9
 
-#include <stdio.h>
 #include <unistd.h>
 
 void	show_table(char table[SIZE][SIZE]);
@@ -25,7 +24,6 @@ int		main(int argc, char **argv)
 	char error;
 	
 	error = 0;
-
 	if(argc == 10)
 		error = set_table(sudoka, argv);
 	if(error != 0 || argc != 10)
@@ -33,7 +31,6 @@ int		main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (-42);
 	}
-
 	show_table(sudoka);
 	return (0);
 }
@@ -49,8 +46,10 @@ char	set_table(char table[SIZE][SIZE], char **input)
 		x = -1;	
 		while (x++ < SIZE -1)
 		{
-			if((input[y+1][x]) 	&& (((input[y+1][x] > 47) && (input[y+1][x] < 58)) 
-					|| (input[y+1][x] == 46)) && (get_lenght(&input[y+1][0]) == 9))
+			if((input[y+1][x]) 	&& 
+					(((input[y+1][x] > 47) && (input[y+1][x] < 58)) 
+					|| (input[y+1][x] == 46)) && 
+					(get_lenght(&input[y+1][0]) == 9))
 			{
 				table[y][x] = input[y+1][x];
 			}
