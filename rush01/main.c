@@ -6,48 +6,43 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:38:11 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/09 05:23:31 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/09 20:38:03 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-#define SIZE 9
-#define BUG 1
-
-char	check_x(char str[SIZE][SIZE], char x, char a);
-char	check_y(char str[SIZE][SIZE], char y, char a);
-char	check_bloc(char str[SIZE][SIZE], char x, char y, char a);
-char	update_case(char str[SIZE][SIZE], char x, char y);
-
-void	show_table(char table[SIZE][SIZE]);
-char	set_table(char table[SIZE][SIZE], char **input);
-int		get_lenght(char *c);
+#include "sudoku.h"
 
 int		main(int argc, char **argv)
 {
 	char sudoka[SIZE][SIZE];
+	char sudoka2[SIZE][SIZE];
 	char error;
-	
+
 	error = 0;
 	if(argc == 10)
 		error = set_table(sudoka, argv);
-	if(error == BUG || argc != 10)
+	
+	if(error == FAIL || argc != 10)
 	{
 		write(1, "Error\n", 6);
 		return (-42);
 	}
-
-	update_case(sudoka, 0, 0);	
+	set_table(sudoka2, argv);
+	if ((update_case(sudoka, 0, 0) == SUCCES) 
+			&& (update_case2(sudoka2, 0, 0) == SUCCES))
+	{
+		write(1, "Error\n", 6);
+		return (-42);
+	}
 	show_table(sudoka);
-	return (0);
+	return (SUCCES);
 }
 
 char	set_table(char table[SIZE][SIZE], char **input)
 {
-	char x;
-	char y;
-	
+	int x;
+	int y;
+
 	y = -1;
 	while (y++ < SIZE -1)
 	{
@@ -56,22 +51,22 @@ char	set_table(char table[SIZE][SIZE], char **input)
 		{
 			if((input[y+1][x]) 	&& 
 					(((input[y+1][x] > 47) && (input[y+1][x] < 58)) 
-					|| (input[y+1][x] == 46)) && 
+					 || (input[y+1][x] == 46)) && 
 					(get_lenght(&input[y+1][0]) == 9))
 			{
 				table[y][x] = input[y+1][x];
 			}
 			else
-				return (BUG);
+				return (FAIL);
 		}
 	}
-	return (0);
+	return (SUCCES);
 }
 
 int		get_lenght(char *c)
 {
 	int	size;
-	
+
 	size = 0;
 	while (*c++)
 		size++;
@@ -80,8 +75,8 @@ int		get_lenght(char *c)
 
 void	show_table(char table[SIZE][SIZE])
 {
-	char x;
-	char y;
+	int x;
+	int y;
 	char tempo;
 
 	y = -1;
