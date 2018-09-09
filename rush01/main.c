@@ -6,21 +6,19 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:38:11 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/09 04:36:53 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/09 05:23:31 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
 #define SIZE 9
 #define BUG 1
 
-
-
 char	check_x(char str[SIZE][SIZE], char x, char a);
 char	check_y(char str[SIZE][SIZE], char y, char a);
 char	check_bloc(char str[SIZE][SIZE], char x, char y, char a);
+char	update_case(char str[SIZE][SIZE], char x, char y);
 
 void	show_table(char table[SIZE][SIZE]);
 char	set_table(char table[SIZE][SIZE], char **input);
@@ -39,9 +37,8 @@ int		main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (-42);
 	}
-	
-	printf("\n mm %d \n", check_bloc(sudoka,7,7,'5'));
 
+	update_case(sudoka, 0, 0);	
 	show_table(sudoka);
 	return (0);
 }
