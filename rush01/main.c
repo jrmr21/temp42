@@ -6,13 +6,21 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:38:11 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/08 23:38:03 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/09 04:36:53 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define SIZE 9
-
 #include <unistd.h>
+#include <stdio.h>
+
+#define SIZE 9
+#define BUG 1
+
+
+
+char	check_x(char str[SIZE][SIZE], char x, char a);
+char	check_y(char str[SIZE][SIZE], char y, char a);
+char	check_bloc(char str[SIZE][SIZE], char x, char y, char a);
 
 void	show_table(char table[SIZE][SIZE]);
 char	set_table(char table[SIZE][SIZE], char **input);
@@ -26,11 +34,14 @@ int		main(int argc, char **argv)
 	error = 0;
 	if(argc == 10)
 		error = set_table(sudoka, argv);
-	if(error != 0 || argc != 10)
+	if(error == BUG || argc != 10)
 	{
 		write(1, "Error\n", 6);
 		return (-42);
 	}
+	
+	printf("\n mm %d \n", check_bloc(sudoka,7,7,'5'));
+
 	show_table(sudoka);
 	return (0);
 }
@@ -54,7 +65,7 @@ char	set_table(char table[SIZE][SIZE], char **input)
 				table[y][x] = input[y+1][x];
 			}
 			else
-				return (1);
+				return (BUG);
 		}
 	}
 	return (0);
@@ -79,13 +90,14 @@ void	show_table(char table[SIZE][SIZE])
 	y = -1;
 	while (y++ < SIZE - 1)
 	{
-		write(1, "\n", 1);
 		x = -1;
 		while (x++ < SIZE -1)
 		{
 			tempo = table[y][x];
 			write(1, &tempo, 1);
-			write(1, " ",1);
+			if(x < SIZE - 1)
+				write(1, " ",1);
 		}
+		write(1, "\n", 1);
 	}
 }
