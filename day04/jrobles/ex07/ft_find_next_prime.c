@@ -6,12 +6,9 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 00:28:21 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/08 00:38:04 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/10 14:19:38 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
 
 int		ft_find_next_prime(int nb);
 int		ft_is_prime(int nb);
