@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 15:43:09 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/10 16:00:21 by jrobles          ###   ########.fr       */
+/*   Created: 2018/09/11 11:06:14 by jrobles           #+#    #+#             */
+/*   Updated: 2018/09/11 18:17:40 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
+int ft_strcmp(char *s1, char *s2);
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
-{
-	unsigned int i;
-
-	i = 0;
-	while (i < n && src[i] != '\0')
+int ft_strcmp(char *s1, char *s2)
+{	
+	while( *s1 == *s2 && *s1 != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		*s2 += 1;
+		*s1 += 1;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (*s1 - *s2);
 }

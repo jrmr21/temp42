@@ -6,13 +6,21 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:17:02 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/11 11:03:09 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/11 16:50:24 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strstr( char *str, char *to_find);
+char 	*ft_strstr( char *str, char *to_find);
+void	strstr_init(unsigned int *a, unsigned int *b, char *c);
 
-char *ft_strstr( char *str, char *to_find)
+void	strstr_init(unsigned int *a, unsigned int *b, char *c)
+{
+	*a = 0;
+	*b = 0;
+	*c = 0;
+}
+
+char	*ft_strstr( char *str, char *to_find)
 {
 	char 			*dest;
 	unsigned int 	i_find;
@@ -20,9 +28,7 @@ char *ft_strstr( char *str, char *to_find)
 	char			check;
 	unsigned int	t;
 	
-	i 		= -1;
-	check 	= 0;
-	i_find 	= 0;
+	strstr_init(&i_find, &i, &check);
 	while (to_find[i_find] != '\0' )
 		i_find++;
 	while (str[++i] != '\0')
