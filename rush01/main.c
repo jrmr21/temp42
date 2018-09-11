@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/08 14:38:11 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/09 22:21:02 by bajouini         ###   ########.fr       */
+/*   Updated: 2018/09/11 16:38:33 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		main(int argc, char **argv)
 		write(1, "Error\n", 6);
 		return (-42);
 	}
-	update_case(sudoka, 0, 0)
+	update_case(sudoka, 0, 0);
 	show_table(sudoka);
 	return (SUCCES);
 }
