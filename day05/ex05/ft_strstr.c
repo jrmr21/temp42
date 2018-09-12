@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:17:02 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/12 17:04:04 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/12 18:02:16 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char			*ft_strstr(char *str, char *to_find)
 	unsigned int	i;
 	unsigned int	t;
 
+	if (to_find[0] == '\0')
+		return (str);
 	strstr_init(&i_find, &i, &check);
 	i_find = set_cursor(to_find);
 	while (str[++i] != '\0' && check == 0)
