@@ -6,11 +6,9 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 22:35:43 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/11 22:44:24 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/12 11:30:07 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 char	*ft_strcapitalize(char *str);
 char	ft_strlowcase(char str);
@@ -32,10 +30,10 @@ char	ft_charlowcase(char str)
 
 char	*ft_strcapitalize(char *str)
 {
-	char maj;
-	int i;
+	char	maj;
+	int		i;
 
-	i 	= -1;
+	i = -1;
 	maj = 1;
 	while (str[++i] != '\0')
 	{
@@ -55,11 +53,4 @@ char	*ft_strcapitalize(char *str)
 			maj = 0;
 	}
 	return (str);
-}
-
-int		main(void)
-{
-	char b[100] ="salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-	printf("\n %s",ft_strcapitalize(b));
-	return (0);	
 }

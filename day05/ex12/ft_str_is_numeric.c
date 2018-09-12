@@ -6,13 +6,13 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 03:02:34 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/12 03:02:37 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/12 11:32:28 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_str_is_numeric(char *str);
+int		ft_str_is_numeric(char *str);
 
-int ft_str_is_numeric(char *str)
+int		ft_str_is_numeric(char *str)
 {
 	int i;
 

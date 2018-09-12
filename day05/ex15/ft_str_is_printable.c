@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 14:39:27 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/12 10:58:24 by jrobles          ###   ########.fr       */
+/*   Created: 2018/09/12 10:45:03 by jrobles           #+#    #+#             */
+/*   Updated: 2018/09/12 11:34:27 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
-void	ft_putstr(char *str);
+int		ft_str_is_printable(char *str);
 
-void	ft_putstr(char *str)
+int		ft_str_is_printable(char *str)
 {
-	while (*str)
-		ft_putchar(*str++);
+	int i;
+
+	i = 0;
+	if (!str)
+		return (1);
+	while (str[i] != '\0')
+	{
+		if (str[i] < 33 || str[i] > 126)
+			return (0);
+		i++;
+	}
+	return (1);
 }

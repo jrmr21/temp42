@@ -6,15 +6,15 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 11:06:14 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/11 18:17:40 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/12 11:18:01 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(char *s1, char *s2);
 
-int ft_strcmp(char *s1, char *s2)
-{	
-	while( *s1 == *s2 && *s1 != '\0')
+int		ft_strcmp(char *s1, char *s2)
+{
+	while (*s1 == *s2 && *s1 != '\0')
 	{
 		s2 += 1;
 		s1 += 1;

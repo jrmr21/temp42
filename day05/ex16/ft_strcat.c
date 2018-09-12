@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/10 14:39:27 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/12 10:58:24 by jrobles          ###   ########.fr       */
+/*   Created: 2018/09/12 10:52:42 by jrobles           #+#    #+#             */
+/*   Updated: 2018/09/12 10:52:46 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
-void	ft_putstr(char *str);
 
-void	ft_putstr(char *str)
+
+char *ft_strcat(char *dest, char *src);
+
+char *ft_strcat(char *dest, char *src)
 {
-	while (*str)
-		ft_putchar(*str++);
+	int 
+
+	reurn 0;
+}
+
+int main(void)
+{
+	char b[100] = "salut";
+	char c[100] = " ca va ?";
+
+	ft_strcat(b,c);
+	printf("%s ",b)
+	return 0;
 }
