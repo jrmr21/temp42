@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:17:02 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/12 16:57:04 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/12 17:04:04 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ unsigned int	set_cursor(char *dest)
 
 char			*ft_strstr(char *str, char *to_find)
 {
+	char			check;
 	unsigned int	i_find;
 	unsigned int	i;
 	unsigned int	t;
@@ -52,5 +53,5 @@ char			*ft_strstr(char *str, char *to_find)
 	if (check == 1)
 		return (&str[i - 1]);
 	else
-		return (NULL);
+		return (0);
 }
