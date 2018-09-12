@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 02:24:39 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/12 11:31:21 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/12 18:51:44 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int		ft_str_is_alpha(char *str)
 	int i;
 
 	i = 0;
-	if (!*str)
+	if (!str )
 		return (1);
 	while (str[i] != '\0')
 	{
-		if ((str[i] < 'a' && str[i] < 'z') || (str[i] < 'A' && str[i] > 'Z'))
+		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
 			return (0);
 		i++;
 	}
