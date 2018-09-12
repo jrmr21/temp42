@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strncat(char *dest, char *src, int nb);
+char	*ft_strncat(char *dest, char *src, int nb);
 
-char *ft_strncat(char *dest, char *src, int nb)
+char	*ft_strncat(char *dest, char *src, int nb)
 {
 	int i;
 	int b;
@@ -21,7 +21,7 @@ char *ft_strncat(char *dest, char *src, int nb)
 	i = 0;
 	while (dest[i] != '\0')
 		i++;
-	while (src[b] != '\0')
+	while (src[b] != '\0' && b < nb)
 	{
 		dest[i] = src[b];
 		i++;
