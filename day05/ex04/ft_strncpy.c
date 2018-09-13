@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 15:43:09 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/12 23:49:16 by jrobles          ###   ########.fr       */
+/*   Updated: 2018/09/13 06:54:39 by jrobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	}
 	while (i < n)
 	{
-		i++;
 		dest[i] = '\0';
+		i++;
 	}
 	return (dest);
 }
