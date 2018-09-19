@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 11:25:18 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/19 03:09:09 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 16:33:31 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	scan_table(t_bscu *bsq)
 
 	x = 0;
 	y = 0;
-	while (y < bsq[0].ligne)
+	while (y < bsq[0].line)
 	{
 		while (x < bsq[0].col - 1)
 		{
@@ -34,8 +34,6 @@ void	scan_table(t_bscu *bsq)
 	}
 }
 
-#include <stdio.h>
-
 void	scan_case(t_bscu *bsq, unsigned int x, unsigned int y)
 {
 	unsigned int	i;
@@ -48,23 +46,17 @@ void	scan_case(t_bscu *bsq, unsigned int x, unsigned int y)
 	{
 		j = x + i + 1;
 		while (j > x)
-		{
-			j--;
-			if (bsq[0].map[y + i][j] == bsq[0].obstacle)
+			if (bsq[0].map[y + i][--j] == bsq[0].obstacle)
 				check++;
-		}
 		j = y + i + 1;
 		while (j > y)
-		{
-			j--;
-			if(bsq[0].map[j][x + i] == bsq[0].obstacle)
+			if (bsq[0].map[--j][x + i] == bsq[0].obstacle) 
 				check++;
-		}
 		if (check == 0)
 			i++;
-		if ((i + x > bsq[0].col) || (i + y > bsq[0].ligne - 1))
-		{
-			check = -1;
+		if ((i + x > bsq[0].col - 2) || (i + y > bsq[0].line - 1))
+		{	
+			check = 1; 
 		}
 	}
 	if (check > 0)
@@ -75,7 +67,6 @@ void	b_cube(t_bscu *bsq, unsigned int x, unsigned int y, unsigned int size)
 {
 	if (size > bsq[0].carre.size)
 	{
-		printf("%i	%i	%i\n",y, x, size);
 		bsq[0].carre.x = x;
 		bsq[0].carre.y = y;
 		bsq[0].carre.size = size;

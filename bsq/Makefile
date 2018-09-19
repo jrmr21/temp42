@@ -6,7 +6,7 @@
 #    By: tbeguin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/18 02:15:30 by tbeguin           #+#    #+#              #
-#    Updated: 2018/09/19 00:35:08 by tbeguin          ###   ########.fr        #
+#    Updated: 2018/09/19 11:09:05 by tbeguin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ FLAGS = -Wall -Werror -Wextra
 
 compileV02 :
 	gcc -c read/read.c lib/tools.c lib/tools_2.c main.c \
-		scan/scan.c
-	gcc  read.o tools.o tools_2.o main.o scan.o -o $(NAME)
+		scan/scan.c verif/verif.c
+	gcc  read.o tools.o tools_2.o main.o scan.o verif.o -o $(NAME)
 	make clean
 
 compile :

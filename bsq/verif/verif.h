@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools_2.c                                          :+:      :+:    :+:   */
+/*   verif.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tbeguin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/18 00:54:37 by tbeguin           #+#    #+#             */
-/*   Updated: 2018/09/19 16:32:29 by tbeguin          ###   ########.fr       */
+/*   Created: 2018/09/19 11:05:35 by tbeguin           #+#    #+#             */
+/*   Updated: 2018/09/19 16:34:04 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#ifndef VERIF_H
+# define VERIF_H
 
-char	*ft_realloc(char *str, int size)
-{
-	char	*tmp;
-	int		i;
+#include "../lib/tools.h"
 
-	i = ft_strlen(str);
-	tmp = (char*)malloc(sizeof(char) * i);
-	ft_strncpy(tmp, str, i);
-	free(str);
-	str = (char*)malloc(sizeof(char) * i + size);
-	ft_strncpy(str, tmp, i);
-	free(tmp);
-	return (str);
-}
+int		verif_char(char buf, t_bscu *bsq);
+void	verif_col(t_bscu *bsq, int i, int j);
+void	verif_line(t_bscu *bsq, int i);
+
+#endif
