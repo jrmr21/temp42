@@ -6,7 +6,7 @@
 /*   By: tbeguin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 00:54:37 by tbeguin           #+#    #+#             */
-/*   Updated: 2018/09/19 16:32:29 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 19:03:48 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,27 @@ char	*ft_realloc(char *str, int size)
 
 	i = ft_strlen(str);
 	tmp = (char*)malloc(sizeof(char) * i);
-	ft_strncpy(tmp, str, i);
-	free(str);
+	if (tmp != NULL)
+	{
+		ft_strncpy(tmp, str, i);
+		free(str);
+	}
 	str = (char*)malloc(sizeof(char) * i + size);
-	ft_strncpy(str, tmp, i);
-	free(tmp);
+	if (str != NULL)
+	{
+		ft_strncpy(str, tmp, i);
+		free(tmp);
+	}
 	return (str);
+}
+
+int		is_numeric(char *str)
+{
+	int i;
+
+	i = -1;
+	while (str[++i] != '\0')
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+	return (1);
 }

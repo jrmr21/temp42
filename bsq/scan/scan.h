@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 11:25:28 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/19 16:33:37 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 19:34:09 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "../lib/tools.h"
 # include "../read/read.h"
 
-void	scan_case(t_bscu *bsq, unsigned int x, unsigned int y);
+void	scan_case(t_bscu *bsq, int x, int y);
 void	scan_table(t_bscu *bsq);
 void	b_cube(t_bscu *bsq, unsigned int x, unsigned int y, unsigned int size);
 

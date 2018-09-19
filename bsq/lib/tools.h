@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 12:23:55 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/19 16:35:07 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 18:17:49 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,6 @@ void					ft_puts(char *str);
 int						ft_strlen(char *str);
 int						ft_atoi(char *str);
 char					*ft_realloc(char *str, int size);
+int						is_numeric(char *str);
 
 #endif

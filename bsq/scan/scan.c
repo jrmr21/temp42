@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 11:25:18 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/19 16:33:31 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 19:30:28 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void	scan_table(t_bscu *bsq)
 	}
 }
 
-void	scan_case(t_bscu *bsq, unsigned int x, unsigned int y)
+void	scan_case(t_bscu *bsq, int x, int y)
 {
-	unsigned int	i;
-	unsigned int	j;
+	int	i;
+	int	j;
 	char			check;
 
 	check = 0;
@@ -50,14 +50,12 @@ void	scan_case(t_bscu *bsq, unsigned int x, unsigned int y)
 				check++;
 		j = y + i + 1;
 		while (j > y)
-			if (bsq[0].map[--j][x + i] == bsq[0].obstacle) 
+			if (bsq[0].map[--j][x + i] == bsq[0].obstacle)
 				check++;
 		if (check == 0)
 			i++;
 		if ((i + x > bsq[0].col - 2) || (i + y > bsq[0].line - 1))
-		{	
-			check = 1; 
-		}
+			check = 1;
 	}
 	if (check > 0)
 		b_cube(&bsq[0], x, y, i);

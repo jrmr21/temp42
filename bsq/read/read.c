@@ -6,7 +6,7 @@
 /*   By: tbeguin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 16:03:19 by tbeguin           #+#    #+#             */
-/*   Updated: 2018/09/19 16:32:47 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 18:59:29 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_read(int fd, t_bscu *bsq)
 	ft_read_first_line(&bsq[0], fd);
 	i = 0;
 	j = 0;
-	while (read(fd, &buf, 1))
+	while (read(fd, &buf, 1) && bsq[0].valid != -1 && bsq[0].map[i] != NULL)
 	{
 		if (verif_char(buf, &bsq[0]) == 0)
 			break ;
@@ -57,7 +57,7 @@ void	ft_read_first_line(t_bscu *bsq, int fd)
 	i = 0;
 	bsq[0].col = 0;
 	str = (char*)malloc(sizeof(char));
-	while (read(fd, &buf, 1))
+	while (read(fd, &buf, 1) && str != NULL)
 	{
 		str[i] = buf;
 		str = ft_realloc(str, 1);
@@ -65,12 +65,9 @@ void	ft_read_first_line(t_bscu *bsq, int fd)
 			break ;
 		i++;
 	}
-	bsq[0].empty = str[i - 3];
-	bsq[0].obstacle = str[i - 2];
-	bsq[0].full = str[i - 1];
-	str[i - 3] = '\0';
-	bsq[0].line = ft_atoi(str);
+	verif_first_line(&bsq[0], str, i);
 	bsq[0].map = (char**)malloc(sizeof(char*) * (bsq[0].line + 1));
-	bsq[0].map[0] = (char*)malloc(sizeof(char) + 1);
+	if (bsq[0].map != NULL)
+		bsq[0].map[0] = (char*)malloc(sizeof(char) + 1);
 	bsq[0].nb_obstacle = 0;
 }

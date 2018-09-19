@@ -6,7 +6,7 @@
 /*   By: tbeguin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 16:34:43 by tbeguin           #+#    #+#             */
-/*   Updated: 2018/09/19 16:29:26 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 19:32:03 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ void	display(t_bscu *bsq)
 int		main(int argc, char **argv)
 {
 	t_bscu	bsq;
-	int		fd;
 	int		i;
 
+	bsq.valid = 0;
 	i = 1;
 	if (argc != 1)
 	{

@@ -6,27 +6,37 @@
 #    By: tbeguin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/18 02:15:30 by tbeguin           #+#    #+#              #
-#    Updated: 2018/09/19 11:09:05 by tbeguin          ###   ########.fr        #
+#    Updated: 2018/09/19 19:30:36 by tbeguin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bsq
-FLAGS = -Wall -Werror -Wextra
+FLAGS = -Wall \
+	   	-Werror \
+	   	-Wextra
 
-compileV02 :
-	gcc -c read/read.c lib/tools.c lib/tools_2.c main.c \
-		scan/scan.c verif/verif.c
-	gcc  read.o tools.o tools_2.o main.o scan.o verif.o -o $(NAME)
-	make clean
+SRC = lib/tools.c \
+	  lib/tools_2.c \
+	  read/read.c \
+	  scan/scan.c \
+	  verif/verif.c \
+	  main.c
 
-compile :
-	gcc $(FLAGS) -c read/read.c lib/tools.c lib/tools_2.c
-	gcc $(FLAGS) read/read.o lib/tools.o lib/tools_2.o -o $(NAME)
+OBJET = tools.o \
+		tools_2.o \
+		read.o \
+		scan.o \
+		verif.o \
+		main.o
+
+all :
+	gcc $(FLAGS) -c $(SRC) 
+	gcc $(FLAGS) $(OBJET) -o $(NAME)
 
 clean :
-	rm -f read.o tools.o tools_2.o main.o verif.o scan.o
+	rm -f $(OBJET)
 
 fclean : clean
 	rm -f $(NAME)
 
-re : fclean compile
+re : fclean all
