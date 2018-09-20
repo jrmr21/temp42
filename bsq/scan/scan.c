@@ -6,7 +6,7 @@
 /*   By: jrobles <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 11:25:18 by jrobles           #+#    #+#             */
-/*   Updated: 2018/09/19 19:30:28 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 21:29:07 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	scan_table(t_bscu *bsq)
 
 void	scan_case(t_bscu *bsq, int x, int y)
 {
-	int	i;
-	int	j;
-	char			check;
+	int		i;
+	int		j;
+	char	check;
 
 	check = 0;
 	i = 0;

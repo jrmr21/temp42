@@ -6,7 +6,7 @@
 /*   By: tbeguin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 16:34:43 by tbeguin           #+#    #+#             */
-/*   Updated: 2018/09/19 19:32:03 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 21:40:27 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	display(t_bscu *bsq)
 	int i;
 	int j;
 
-	if (bsq[0].valid == -1)
+	if (bsq[0].valid == -1 || bsq[0].line == 0 || bsq[0].col == 1)
 	{
 		write(1, "map error\n", 10);
 		return ;
@@ -73,6 +73,7 @@ int		main(int argc, char **argv)
 	{
 		while (i < argc)
 		{
+			bsq.valid = 0;
 			ft_open_files(argv[i], &bsq);
 			bsq.carre.size = 0;
 			display(&bsq);

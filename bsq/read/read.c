@@ -6,7 +6,7 @@
 /*   By: tbeguin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/18 16:03:19 by tbeguin           #+#    #+#             */
-/*   Updated: 2018/09/19 18:59:29 by tbeguin          ###   ########.fr       */
+/*   Updated: 2018/09/19 21:38:56 by tbeguin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ void	ft_open_files(char *argv, t_bscu *bsq)
 	int		fd;
 
 	fd = open(argv, O_RDONLY);
+	if (fd == -1)
+	{
+		bsq[0].valid = -1;
+		return ;
+	}
 	ft_read(fd, &bsq[0]);
 	close(fd);
 }
