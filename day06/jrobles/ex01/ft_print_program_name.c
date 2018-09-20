@@ -26,5 +26,7 @@ int		main(int argc, char **argv)
 {
 	putstr(argv[0]);
 	ft_putchar('\n');
+	if (argc)
+		return (0);
 	return (0);
 }
